@@ -1,0 +1,13 @@
+{% extends 'baseHeader.html' %}
+{% block content %}
+<title>{{ title }}</title>
+{% if latest_machine_list %}
+    <ul>
+    {% for machine in latest_machine_list %}
+        <li><a href="{{ url }}{{ machine.sno }}/">{{ machine.hostname }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No machine are available.</p>
+{% endif %}
+{% endblock %}

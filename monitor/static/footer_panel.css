@@ -1,0 +1,58 @@
+/* Style the header with a grey background and some padding */
+.div_footer_panel {
+  overflow: hidden;
+  background-color: #g1g1g1;
+  padding: 10px 10 px;
+  bottom:0
+}
+
+/* Style the left_panel links */
+.footer_panel a {
+  float: right;
+  color: black;
+  text-align: right;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 15px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the left_panel to increase when the font gets bigger */
+.footer_panel a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.footer_panel a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active/current link*/
+.footer_panel a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Float the link section to the right */
+.footer_panel-right {
+  float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .footer_panel a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .footer_panel-right {
+    float: none;
+  }
+}
+
+.footer_panel li {
+    color: Blue
+}

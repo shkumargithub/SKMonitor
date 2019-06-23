@@ -1,0 +1,47 @@
+{% extends 'baseHeader.html' %}
+##################################################################################
+{% block script_panel %}
+<script>
+function w3_open1() {
+  document.getElementById("div_right_panel").style.marginLeft = "25%";
+  document.getElementById("div_left_panel").style.width = "25%";
+  document.getElementById("div_left_panel").style.display = "block";
+  document.getElementById("openNav").style.display = 'none';
+}
+function w3_close1() {
+  document.getElementById("div_right_panel").style.marginLeft = "0%";
+  document.getElementById("div_left_panel").style.display = "none";
+  document.getElementById("openNav").style.display = "inline-block";
+}
+</script>
+{% endblock %}
+##################################################################################
+{% block left_panel %}
+{% if latest_machine_list %}
+    <!--<ul>-->
+    {% for machine in latest_machine_list %}
+        <!--<li><a href="{{ url }}{{ machine.sno }}/">{{ machine.hostname }}</a></li> {{ machine.filesystem }}-->
+        <a href="{{ url }}{{ machine.sno }}/" class="w3-bar-item w3-button">{{ machine.hostname }}</a>
+    {% endfor %}
+    <!--</ul>-->
+{% if system_usage %}
+   <div> System usage is: {{ system_usage }}</div>
+{% endif %}
+{% else %}
+    <p>No machine are available.</p>
+{% endif %}
+
+{% endblock %}
+##################################################################################
+{% block content2 %}
+Hi, this is workspace pane
+{% endblock %}
+##################################################################################
+##################################################################################
+{% block footer %}
+<div class="div_left_pane">
+    <h3>Hi, this is footer pane</h3>
+</div>
+
+{% endblock %}
+##################################################################################
